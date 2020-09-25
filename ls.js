@@ -10,8 +10,9 @@ const fs = require('fs');
 //         }
 //     })
 // }
+let bash = require('./bash.js')
 
-module.exports = (done) => {
+module.exports = (bash.done) => {
     fs.readdir('./', 'utf8', (err, files) => {
         if (err) {
             done('Something went wrong!')
