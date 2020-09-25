@@ -12,12 +12,12 @@ const fs = require('fs');
 // }
 let bash = require('./bash.js')
 
-module.exports = (bash.done) => {
+module.exports = function (done) {
     fs.readdir('./', 'utf8', (err, files) => {
         if (err) {
-            done('Something went wrong!')
+            bash.done('Something went wrong!')
         } else {
-            done(files.join('\n'))
+            bash.done(files.join('\n'))
         }
     })
 }

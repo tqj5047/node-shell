@@ -29,9 +29,10 @@ process.stdin.on('data', (data) => {
         process.stdout.write('\nprompt > ')
     }
 })
-module.exports.done = done
-const done = (output) => {
 
-    process.stdout.write(output)
-    process.stdout.write('prompt > ')
+function done(output) {
+
+    return process.stdout.write(output) + process.stdout.write('\nprompt > ')
 }
+
+module.exports = { done: done }
